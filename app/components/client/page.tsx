@@ -29,8 +29,7 @@ export default function MainPage() {
   const [country, setCountry] = useState('');
   const [result, setResult] = useState(null);
 
-  const onClick = async (e) => {
-    e.preventDefault();
+  const onClick = async () => {
     try { const res = await fetch('/api/getWeatherData', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
