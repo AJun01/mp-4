@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         const { lat, lon } = geoData;
         console.log(lat, lon);
         //second request with lat and lon
-        const weatherUrl = `https://api.openweathermap.org/data/3.0/onecall/overview?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
         const weatherRes = await fetch(weatherUrl);
         console.log(weatherRes);
         if(!weatherRes.ok) return NextResponse.json({error: weatherRes.statusText+ 'no found weather no found oops'}, {status:weatherRes.status});
