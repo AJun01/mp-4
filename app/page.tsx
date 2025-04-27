@@ -1,14 +1,11 @@
 'use client';
 
-
-import NaviLinks from './components/navigation';
-import Welcome from './components/welcome';
+import Weather from './components/client';
 
 export default function Home() {
   return (
    <>
-    <Welcome />
-    <NaviLinks />
+  <Weather />
    </>
   );
 }
