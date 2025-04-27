@@ -49,7 +49,12 @@ export default function MainPage() {
         <StyledInput type="text"  placeholder="country code" value={country} onChange={(e) => setCountry(e.target.value)}
         />
         <StyledButton onClick={onClick}>Get the weather ! </StyledButton>
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+        {result && (
+  <div>
+  <h2>Weather: {result.weather[0].main}</h2>
+  <h2>Temperature: {Math.round(result.main.temp - 273.15)}°C</h2>
+</div>
+)}
     </StyledDiv>
   );
 }
